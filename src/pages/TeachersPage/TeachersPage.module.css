@@ -1,0 +1,13 @@
+.teachersPage{
+    background-color: var(--grey-dark);
+    padding-block: 96px;
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;
+}
+
+@media screen and (min-width: 1440px) {
+    .teachersPage {
+        padding-inline: 128px;
+    }
+}

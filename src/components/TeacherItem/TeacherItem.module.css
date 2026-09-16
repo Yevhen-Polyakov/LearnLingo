@@ -1,0 +1,235 @@
+.item{
+    background-color: var(--white);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+      
+}
+
+@media screen and (min-width: 768px) {
+    .item{
+        width: 610px;
+        padding: 24px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .item{
+        flex-direction: row;
+        gap: 48px;  
+        width: auto; 
+    }
+}
+
+.imgWrapper {
+    position: relative;
+    width: 126px;
+    height: 126px;
+    border: 3px solid var(--yellow-light);
+    border-radius: 50%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.imgWrapper::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: green;
+    border: 2px solid white;
+}
+
+.img{
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+}
+
+.headerCard{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;   
+}
+
+.language{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .language{
+        display: block;
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 1.5;
+        color: var(--title-gray);
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .language{
+        margin-right: 192px;
+        font-size: 16px;
+    }  
+}
+
+.languages{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--title-gray);
+}
+
+@media screen and (min-width: 768px) {
+    .languages{
+        font-size: 16px;
+    }
+}
+
+.marginRight{
+    margin-right: 192px;
+}
+
+.star{
+    color: var(--star);
+}
+
+.teacherStatsList{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-right: 40px;
+}
+
+@media screen and (min-width: 768px) {
+   .teacherStatsList{
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-right: 65px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+    .teacherStatsList{
+        display: flex;
+
+    }
+}
+
+.teacherStatsItem{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+@media screen and (min-width:1440px) {
+   .teacherStatsItem{
+        font-size: 16px;
+               
+    } 
+}
+
+.line{
+    display: none;
+}
+
+@media screen and (min-width: 1440px) {
+    .line{
+        color: var(--line); 
+        display: block;
+}
+}
+
+.price{
+    color: var(--price);
+    font-family: var(--font-family);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.title{
+    margin-bottom: 32px;
+}
+
+.teacherDescList{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    
+}
+
+@media screen and (min-width: 1440px) {
+   .teacherDescList{
+        max-width: 815px;
+    }
+}
+
+.textSpan{
+    font-size: 14px;
+    color: var(--text-color);  
+}
+
+@media screen and (min-width: 768px) {
+    .textSpan{
+        font-size: 16px;
+    }
+}
+
+.textDecoration{
+    text-decoration: underline;
+}
+
+.heart {
+  background: transparent;
+  border: none;
+  width: 22px;
+  height: 19px;
+}
+
+.heartActive{
+    color: var(--yellow);
+    border: none;
+    width: 22px;
+    height: 22px;
+}
+
+.levelsList{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 32px;
+}
+
+@media screen and (min-width: 1440px) {
+   .levelsList{
+        display: flex;
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+}
+
+.levelsItem{
+    border-radius: 35px;
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+}
+
+.levelsItem:first-child{
+    background-color: var(--yellow);
+    width: 130px;
+}

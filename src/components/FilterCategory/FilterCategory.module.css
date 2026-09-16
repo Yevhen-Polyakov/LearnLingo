@@ -1,0 +1,120 @@
+.filterWrap{
+    margin: 0 auto;
+    margin-bottom: 32px;
+    width: 300px;
+    display: flex;   
+}
+
+@media screen and ( min-width: 768px) {
+    .filterWrap{
+        
+        margin: 0;
+        margin-bottom: 32px;
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  
+}
+
+@media screen and (min-width: 1440px) {
+   .form{
+        flex-direction: row;
+        gap: 20px;  
+    }
+}
+
+.label{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 8px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--title-gray);
+}
+
+.select{
+    border-radius: 14px;
+    padding: 16px 10px;
+    border: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 221px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.label:nth-child(2) .select {
+    width: 198px;
+}
+
+.label:nth-child(3) .select {
+    width: 124px;
+}
+
+.select.activeSelect{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.1;
+    color: var(--title-gray);  
+}
+
+.select option {
+    color: var(--text-color);
+}
+
+.select option.activeSelect,
+.select option:checked {
+    color: var(--title-gray);
+}
+
+.icon {
+    position: absolute;
+    top: 45px;
+    color: var(--text-color);  
+    transition: transform 0.2s ease;
+    pointer-events: none;
+}
+
+.label:nth-child(1) .icon {
+    right: 20px;
+}
+
+.label:nth-child(2) .icon {
+    right: 20px;
+}
+
+.label:nth-child(3) .icon {
+    right: 20px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .icon{
+        right: 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .icon{
+        right: 20px;
+    }
+}
+
+.label:focus-within .icon {
+    transform: rotate(180deg);
+}
+
+.active{
+    transform: rotate(180deg);
+}

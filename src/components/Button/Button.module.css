@@ -1,0 +1,139 @@
+.button {
+	border: none;
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.25;
+	cursor: pointer;
+}
+
+.login {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--text-color);
+	background: transparent;
+}
+
+.login:hover {
+	color: var(--yellow);
+}
+
+.login:focus-visible,
+.register:focus-visible {
+	outline: 2px solid var(--yellow);
+	outline-offset: 3px;
+}
+
+.login :global(svg) {
+	color: var(--yellow);
+	width: 20px;
+	height: 20px;
+    padding: 0px;
+}
+
+.register {
+	border-radius: 12px;
+	padding: 14px 39px;
+	width: 166px;
+	height: 48px;
+	color: var(--white);
+	background: var(--text-color);
+}
+
+.register:hover {
+	background: var(--yellow);
+}
+
+
+.buttonForm{
+	font-size: 16px;
+	font-weight: 500;
+	border-radius: 12px;
+    padding: 16px;
+    width: 100%;
+    line-height: 1.5;
+	color: var(--text-color); 
+    background: var(--yellow);
+}
+
+.buttonForm:hover {
+	background: var(--hover-button);
+}
+
+.buttonForm:focus-visible {
+	outline: 2px solid var(--text-color);
+	outline-offset: 3px;
+}
+
+@media screen and (min-width: 768px) {
+	.buttonForm{
+		font-size: 18px;
+		font-weight: 700;
+	}
+}
+
+.loadMore{
+	padding: 16px 48px;
+	border-radius: 12px;
+	background-color: var(--yellow);
+	width: 183px;
+	margin: 0 auto;
+}
+
+.loadMore:hover {
+	background: var(--hover-button);
+}
+
+.loadMore:focus-visible {
+	outline: 2px solid var(--text-color);
+	outline-offset: 3px;
+}
+
+.heart{
+	background: transparent;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ReadMore{
+	background: transparent;
+	text-decoration: underline;
+	text-decoration-skip-ink: none;
+	line-height: 1.5;
+	font-weight: 500;
+	margin-bottom: 32px;
+}
+
+.lesson{
+	border-radius: 12px;
+	padding: 10px 20px;
+	background-color: var(--yellow);
+	font-family: var(--font-family);
+	font-weight: 700;
+	line-height: 1.56;	
+}
+
+.lesson:hover {
+	background: var(--hover-button);
+}
+
+.lesson:focus-visible {
+	outline: 2px solid var(--text-color);
+	outline-offset: 3px;
+}
+
+@media screen and (min-width: 768px) {
+	.lesson{
+		border-radius: 12px;
+		padding: 16px 48px;
+		width: 232px;
+		height: 60px;
+		background-color: var(--yellow);
+		font-family: var(--font-family);
+		font-weight: 700;
+		line-height: 1.56;	
+}
+}
