@@ -88,15 +88,17 @@ const BurgerMenu = ({onOpenLogin, onOpenRegister, isLoggedIn, onLogout}: Props) 
                         )}
                     </li>
 
-                    <li>
-                        <Button 
-                            variant="register"
-                            type="button" 
-                            aria-label="Register"
-                            onClick={onOpenRegister}>
-                            Registration
-                        </Button>
-                    </li>
+                    {!isLoggedIn && (
+                        <li>
+                            <Button 
+                                variant="register"
+                                type="button" 
+                                aria-label="Register"
+                                onClick={onOpenRegister}>
+                                Registration
+                            </Button>
+                        </li>
+                    )}
                 </ul>
               </nav>
             </div>

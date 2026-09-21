@@ -37,12 +37,10 @@ const RegisterForm = ({onSuccess}: Props) => {
 
     const onSubmit = async (data: FormRegister) => {
         try{
-            const user = await registerUser(
+            await registerUser(
                 data.email, 
                 data.password, 
                 data.name)
-
-            console.log("User", user)
 
             reset()
             toast.success("Registration successful!")
@@ -50,8 +48,7 @@ const RegisterForm = ({onSuccess}: Props) => {
             
         } catch (error) {
             toast.error(error instanceof Error ? error.message : "Registration error")
-        }
-        
+        }    
     }
     
     return(

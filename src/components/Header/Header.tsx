@@ -46,11 +46,11 @@ const Header = ({ onOpenLogin, onOpenRegister }: Props) => {
                         <Link to={"/"}>Home</Link>
                     </li>
                     <li className={css.navItem}>
-                        <Link to={"Teachers"}>Teachers</Link>
+                        <Link to={"teachers"}>Teachers</Link>
                     </li>
                     {isLoggedIn ? (
                        <li className={css.navItem}>
-                            <Link to={"Favorites"}>Favorites</Link>
+                            <Link to={"favorites"}>Favorites</Link>
                        </li> 
                     ) : ""}
                 </ul>
@@ -81,15 +81,17 @@ const Header = ({ onOpenLogin, onOpenRegister }: Props) => {
                         
                     </li>
 
-                    <li>
-                        <Button 
-                            variant="register"
-                            type="button" 
-                            aria-label="Register"
-                            onClick={onOpenRegister}>
-                            Registration
-                        </Button>
-                    </li>
+                    {!isLoggedIn && (
+                        <li>
+                            <Button 
+                                variant="register"
+                                type="button" 
+                                aria-label="Register"
+                                onClick={onOpenRegister}>
+                                Registration
+                            </Button>
+                        </li>
+                    )}
                 </ul>
 
             </nav>

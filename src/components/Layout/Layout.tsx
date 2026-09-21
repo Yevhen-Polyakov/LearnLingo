@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom"
-import { useLocation } from "react-router-dom"
 import Header from "../Header/Header"
 import { useEffect, useState } from "react"
 import AuthModal from "../AuthModal/AuthModal"
@@ -21,11 +20,8 @@ const Layout = () => {
     const loadFavorites = useFavoriteStore((state) => state.loadFavorites)
     const clearFavorites = useFavoriteStore((state) => state.clearFavorites)
 
-    const { pathname } = useLocation()
     const [authMode, setAuthMode] = useState<AuthMode | null>(null)
     const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null)
-
-    const isHomePage = pathname === "/Home" || pathname === "/"
 
     const openLogin = () => setAuthMode("login")
     const openRegister = () => setAuthMode("register")
@@ -55,9 +51,7 @@ const Layout = () => {
     return(
         <>
             <Toaster position="top-right" containerStyle={{zIndex: 9999}}/>
-            {isHomePage && (
-                <Header onOpenLogin={openLogin} onOpenRegister={openRegister} />
-            )}
+            <Header onOpenLogin={openLogin} onOpenRegister={openRegister} />
             <main>
                 <Outlet context={{ openBooking } satisfies OutletContext} />
             </main>

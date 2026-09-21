@@ -37,6 +37,7 @@ const TeachersPage = () => {
   const filteredTeachers = filterTeachers(teachers, {language, level, price})
 
     const visibleTeachers = filteredTeachers
+    const shouldShowLoadMore = hasNextPage && visibleTeachers.length >= PAGE_SIZE
 
     const languages = [...new Set(teachers.flatMap((teacher) => teacher.languages)),]
 
@@ -61,7 +62,7 @@ const TeachersPage = () => {
         {isLoading && <Loader/>}
         {isError && <p>{error.message}</p>}
         {data && <TeacherList teachers={visibleTeachers} openBooking={openBooking}/>}
-        { hasNextPage && (
+        { shouldShowLoadMore && (
           <Button 
             variant="loadMore" 
             type="button" 

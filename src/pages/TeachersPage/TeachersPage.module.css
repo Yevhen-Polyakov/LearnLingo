@@ -1,5 +1,4 @@
 .teachersPage{
-    background-color: var(--grey-dark);
     padding-block: 96px;
     display: flex;
     flex-direction: column; 

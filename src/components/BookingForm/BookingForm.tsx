@@ -1,4 +1,5 @@
 import css from "../LoginForm/LoginForm.module.css"
+import bookingCss from "./BookingForm.module.css"
 import Button from "../Button/Button"
 import * as  Yup from "yup"
 import { useForm } from "react-hook-form"
@@ -14,6 +15,7 @@ type FormData = {
     name: string;
     email: string;
     phone: string;
+    reason: string;
 }
 
 const booking = Yup.object().shape({
@@ -28,6 +30,9 @@ const booking = Yup.object().shape({
         
     phone: Yup.string()
         .required("Phone is required"),
+    
+    reason: Yup.string()
+        .required("Please select your reason for learning"),    
 })
 
 const BookingForm = ({teacher}:Props) => {
@@ -38,26 +43,63 @@ const BookingForm = ({teacher}:Props) => {
             name: "",
             email: "",
             phone: "",
+            reason: "Career and business",
         }
     })
 
     const onSubmit = (data: FormData) => {
-        console.log("Booking",{
-           teacher:`${teacher.name} ${teacher.surname}`,  
-           ...data,
-        })
+         console.log(data);
         reset()
         toast.success("Trial lesson booked successfully!")  
     }
 
     return(
-         <div className={css.login}>
+         <div className={`${css.login} ${bookingCss.bookingWrap}`}>
             <div className={css.loginText}>
                 <h2 className={css.title}>Book a trial lesson</h2>
-                <p className={css.paragraph}>Thank you for your interest in our platform! Please provide the following information to book a trial lesson with your chosen teacher.</p>
+                <p className={css.paragraph}>Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs.</p>
             </div>
 
-              <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
+            <div className={bookingCss.user}>
+                <img
+                    className={bookingCss.userAvatar}
+                    src={teacher.avatar_url}
+                    alt={`${teacher.name} ${teacher.surname}`}
+                />
+
+                <div className={bookingCss.userInfo}>
+                    <span className={bookingCss.userLabel}>Your teacher</span>
+                    <p className={bookingCss.userName}>{teacher.name} {teacher.surname}</p>
+                </div>
+            </div>
+
+            <h3 className={bookingCss.learning}>What is your main reason for learning {teacher.languages.join(", ")}?</h3>
+
+            <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
+
+                <fieldset className={bookingCss.fieldset}>
+                    {[
+                        "Career and business",
+                        "Lesson for kids",
+                        "Living abroad",
+                        "Exams and coursework",
+                        "Culture, travel or hobby",
+                    ].map((option) => (
+                        <label key={option} className={bookingCss.label}>
+                            <input
+                                className={bookingCss.input}
+                                type="radio"
+                                value={option}
+                                {...register("reason")}
+                            />
+                            <span>{option}</span>
+                        </label>
+                    ))}
+                </fieldset>
+
+                {errors.reason && (
+                    <p className="error">{errors.reason.message}</p>
+                )}
                 
                 <input
                     className={css.input} 
@@ -93,7 +135,7 @@ const BookingForm = ({teacher}:Props) => {
                     variant="buttonForm"
                     type="submit"
                     aria-label="Booking">
-                       Book trial lesson 
+                       Book 
                 </Button>    
             </form>
         </div>

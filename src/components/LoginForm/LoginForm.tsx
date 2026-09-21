@@ -32,10 +32,8 @@ const LoginForm = ({onSuccess}: Props) => {
     const onSubmit = async (data: FormData) => {
 
         try{
-            const user = await loginUser(data.email, data.password)
+            await loginUser(data.email, data.password)
             
-            console.log("LoginUser", user)
-
             reset()
             toast.success("Successfully logged in!")
             onSuccess()
