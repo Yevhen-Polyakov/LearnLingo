@@ -104,7 +104,7 @@ const BookingForm = ({teacher}:Props) => {
                 <input
                     className={css.input} 
                     type="text"
-                    placeholder="Name" 
+                    placeholder="Full Name" 
                     {...register("name")}/>
 
                     {errors.name &&(
@@ -124,7 +124,7 @@ const BookingForm = ({teacher}:Props) => {
                 <input 
                     className={`${css.input} ${css.marginBottom18}`}
                     type="tel"
-                    placeholder="Phone"
+                    placeholder="Phone number"
                     {...register("phone")}/>
 
                     {errors.phone && (
