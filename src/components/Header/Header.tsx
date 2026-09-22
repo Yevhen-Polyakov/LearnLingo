@@ -1,5 +1,5 @@
 import { FaArrowRightToBracket } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import css from "./Header.module.css";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
@@ -18,6 +18,8 @@ type Props = {
 const Header = ({ onOpenLogin, onOpenRegister }: Props) => {
 
     const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+    const { pathname } = useLocation()
+    const isHomePage = pathname.toLowerCase() === "/home"
  
 
     const handleLogout = async () => {
@@ -30,14 +32,14 @@ const Header = ({ onOpenLogin, onOpenRegister }: Props) => {
     };
 
   return (
-    <header className={css.header}>
+    <header className={`${css.header} ${isHomePage ? css.homeHeader : ""}`}>
       <div className="container">
         <div className={css.headerWrapper}>
             <Link 
                 className={css.logo} 
                 to={"/"}>
                 <img src={logo} alt="School of the Future" />
-                LearnLingo
+                <span>LearnLingo</span>
             </Link>
 
             <nav className={css.nav}>

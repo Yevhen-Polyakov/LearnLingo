@@ -8,11 +8,23 @@
 }
 
 .login {
+	width: 78px;
+	height: 20px;
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	color: var(--text-color);
 	background: transparent;
+	padding: 0;
+}
+
+.login span,
+.login :global(svg) {
+	flex-shrink: 0;
+}
+
+.login span {
+	white-space: nowrap;
 }
 
 .login:hover {
